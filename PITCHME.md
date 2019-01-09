@@ -89,6 +89,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 ---
 
 ### Workloadsの階層構造
+
 - Pod  ---> ReplicaSet  ---> Deployment 
 - Pod  ---> DemonSet
 - Pod  ---> StatefulSet
@@ -99,6 +100,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 ---
 
 ##### Pods-overview
+
 ![pods-overview](https://d33wubrfki0l68.cloudfront.net/fe03f68d8ede9815184852ca2a4fd30325e5d15a/98064/docs/tutorials/kubernetes-basics/public/images/module_03_pods.svg)
 
 - https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/#pods-overview
@@ -106,6 +108,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 ---
 
 ##### Node-overview
+
 <img src="https://d33wubrfki0l68.cloudfront.net/5cb72d407cbe2755e581b6de757e0d81760d5b86/a9df9/docs/tutorials/kubernetes-basics/public/images/module_03_nodes.svg" width=50%>
 - https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/#node-overview
 
@@ -139,6 +142,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 ---
 
 #### ClusterIP
+
 ![clusterip](https://thinkit.co.jp/sites/default/files/article_node/1373807.jpg)
 
 ---
@@ -167,6 +171,7 @@ $ kubectl apply -f clusterip_sample.yml
 ---
 
 #### NodePort
+
 ![nodeport](https://thinkit.co.jp/sites/default/files/article_node/1373809.jpg)
 
 ---
@@ -196,7 +201,9 @@ kubectl apply -f nodeport_sample.yml
 ---
 
 ### Ingress
+
 ![ingress](https://thinkit.co.jp/sites/default/files/article_node/1373904.jpg)
+
 LBは一旦Nginx Podまで転送し、NginxがL7相当の処理を行い対象のPodへ転送します。このとき、Nginx Podから対象のPodまではNodePortは通らず、直接PodのIP宛に送られます。
 
 
