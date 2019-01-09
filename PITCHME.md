@@ -256,7 +256,7 @@ $ kubectl apply -f hostpath-sample.yml
 
 ---
 
-- persistentVolume
+- persistentVolume  
   k8sで抽象化された永続化Volumeです。 
 
 +++
@@ -288,7 +288,7 @@ $ kubectl create -f pv_sample.yml
 
 ---
 
-- persistentVolumeClaim
+- persistentVolumeClaim  
   PersistentVolumeリソースの中から「xxxGBの領域ちょうだい！」と要求するためのリソース。
   ![pvc](https://thinkit.co.jp/sites/default/files/article_node/1419505.jpg)
 
