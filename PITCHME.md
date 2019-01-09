@@ -107,7 +107,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 
 ##### Node-overview
 <img src="https://d33wubrfki0l68.cloudfront.net/5cb72d407cbe2755e581b6de757e0d81760d5b86/a9df9/docs/tutorials/kubernetes-basics/public/images/module_03_nodes.svg" width=50%>
-  - https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/#node-overview
+- https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/#node-overview
 
 ---
 
@@ -164,6 +164,8 @@ spec:
 $ kubectl apply -f clusterip_sample.yml
 ```
 
+---
+
 #### NodePort
 ![nodeport](https://thinkit.co.jp/sites/default/files/article_node/1373809.jpg)
 
@@ -191,6 +193,7 @@ spec:
 kubectl apply -f nodeport_sample.yml
 ```
 
+---
 
 ### Ingress
 ![ingress](https://thinkit.co.jp/sites/default/files/article_node/1373904.jpg)
