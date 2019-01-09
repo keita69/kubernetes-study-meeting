@@ -72,6 +72,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 | **Config ＆ Storage**  | リソース設定／機密情報／永続化ボリュームなどに関するリソース |
 | **Cluster**  | リソースセキュリティやクォータなどに関するリソース |
 | **Metadata**  | リソースクラスタ内の他のリソースを操作するためのリソース |
+@size(12px)
 
 ---
 
