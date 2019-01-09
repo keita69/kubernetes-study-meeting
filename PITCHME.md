@@ -52,7 +52,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 
 ### エコシステム  
 
-![エコシステム](https://landscape.cncf.io/format=landscap)
+![エコシステム](https://landscape.cncf.io/images/landscape.png)
 
 ---
 
