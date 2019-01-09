@@ -63,8 +63,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 
 ---
 
-### kubernetes リソース
-- 各リソース
+- kubernetesリソース
   - **Workloads**  
     - リソースコンテナの実行に関するリソース 
   - **Discovery ＆ LB**  
