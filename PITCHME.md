@@ -111,7 +111,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 ---
 
 ### Discovery & LB リソース
-- Service
+- Service |
   - ClusterIP ★
   - ExternalIP（ClusterIP の一種）
   - NodePort ★
@@ -119,7 +119,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
   - Headless（None）
   - ExternalName
   - None-Selector
-- Ingress ★
+- Ingress ★ |
 
 ---
 
