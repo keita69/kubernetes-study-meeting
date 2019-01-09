@@ -201,8 +201,7 @@ kubectl apply -f nodeport_sample.yml
 ---
 
 ### Ingress
-
-@size[xx-small](LBは一旦Nginx Podまで転送し、NginxがL7相当の処理を行い対象のPodへ転送します。このとき、Nginx Podから対象のPodまではNodePortは通らず、直接PodのIP宛に送られます。)
+@size[10px](LBは一旦Nginx Podまで転送し、NginxがL7相当の処理を行い対象のPodへ転送します。このとき、Nginx Podから対象のPodまではNodePortは通らず、直接PodのIP宛に送られます。)
 
 ![ingress](https://thinkit.co.jp/sites/default/files/article_node/1373904.jpg)
 
