@@ -296,7 +296,7 @@ $ kubectl create -f pv_sample.yml
 
 ---
 
-### Metadata リソース |
+### Metadata リソース 
 未稿
 
 ---
