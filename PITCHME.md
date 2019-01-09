@@ -19,7 +19,12 @@
 - Dockerコンテナ  
   http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 
-@box[bg-orange text-white rounded demo-box-pad](コンテナ ≒ 仮想ホスト（VM）) 
+![SAMBA Deployment](https://onetapbeyond.github.io/resource/img/samba/new-samba-deploy.jpg)
+![SAMBA Deployment](http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png)
+
+
+
+@box[bg-orange text-white rounded demo-box-pad]( コンテナ ≒ 仮想ホスト（VM）) 
 
 ---
 
