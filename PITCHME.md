@@ -23,7 +23,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 ---
 
 ### コンテナ ≒ 仮想ホスト（VM） 
-※ コンテナは仮想ホスト(VM)のプロセス単位に近
+※ コンテナは仮想ホスト(VM)のプロセス単位に近い
 
 +++
 
@@ -64,11 +64,11 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 ---
 
 ### kubernetes リソース
-  - **Workloads** @size[16px]( リソースコンテナの実行に関するリソース )
-  - **Discovery ＆ LB** @size[16px](リソースコンテナを外部公開するようなエンドポイントを提供するリソース )
-  - **Config ＆ Storage** @size[16px](リソース設定／機密情報／永続化ボリュームなどに関するリソース )
-  - **Cluster** @size[16px](リソースセキュリティやクォータなどに関するリソース )
-  - **Metadata** @size[16px](リソースクラスタ内の他のリソースを操作するためのリソース )
+- **Workloads** @size[16px]( リソースコンテナの実行に関するリソース )
+- **Discovery ＆ LB** @size[16px](リソースコンテナを外部公開するようなエンドポイントを提供するリソース )
+- **Config ＆ Storage** @size[16px](リソース設定／機密情報／永続化ボリュームなどに関するリソース )
+- **Cluster** @size[16px](リソースセキュリティやクォータなどに関するリソース )
+- **Metadata** @size[16px](リソースクラスタ内の他のリソースを操作するためのリソース )
 
 ---
 
