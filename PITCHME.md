@@ -310,6 +310,11 @@ $ kubectl create -f pv_sample.yml
 - kubectlコマンドのパラメタ補完（必須！）
   https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion
 
+---
+
+### リンク集
+- 今こそ始めよう！　Kubernetes入門 記事一覧
+  https://thinkit.co.jp/series/7342
 
 ---
 
