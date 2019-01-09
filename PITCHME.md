@@ -94,7 +94,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 - Pod  ---> StatefulSet
 - Pod  ---> Job         ---> CronJob
 
-@box[bg-orange text-white rounded demo-box-pad](Pod が１サーバのイメージで、コンテナはプロセスのイメージ。)
+@box[bg-orange text-white rounded demo-box-pad](Pod が１サーバに相当し、コンテナは１プロセスに相当する。)
 
 ---
 
