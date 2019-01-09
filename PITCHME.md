@@ -65,15 +65,15 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 
 ### kubernetes リソース
 - **Workloads**
-  リソースコンテナの実行に関するリソース |
+  リソースコンテナの実行に関するリソース 
 - **Discovery ＆ LB**
-  リソースコンテナを外部公開するようなエンドポイントを提供するリソース |
+  リソースコンテナを外部公開するようなエンドポイントを提供するリソース 
 - **Config ＆ Storage**
-  リソース設定／機密情報／永続化ボリュームなどに関するリソース |
+  リソース設定／機密情報／永続化ボリュームなどに関するリソース 
 - **Cluster**
-  リソースセキュリティやクォータなどに関するリソース |
+  リソースセキュリティやクォータなどに関するリソース 
 - **Metadata**
-  リソースクラスタ内の他のリソースを操作するためのリソース |
+  リソースクラスタ内の他のリソースを操作するためのリソース 
 
 ---
 
@@ -96,7 +96,8 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 - Pod  ---> StatefulSet
 - Pod  ---> Job         ---> CronJob
 
-@box[bg-orange text-white rounded demo-box-pad](Pod が１サーバに相当し、コンテナは１プロセスに相当する。)
+@box[bg-orange text-white rounded demo-box-pad](Pod が１サーバに相当し、
+コンテナは１プロセスに相当する。)
 
 ---
 
