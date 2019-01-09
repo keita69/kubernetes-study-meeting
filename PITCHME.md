@@ -259,6 +259,7 @@ $ kubectl apply -f hostpath-sample.yml
 
 - persistentVolume  
   k8sで抽象化された永続化Volumeです。 
+  ![pvc](https://thinkit.co.jp/sites/default/files/article_node/1419505.jpg)
 
 +++
 
