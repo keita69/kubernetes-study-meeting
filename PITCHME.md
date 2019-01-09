@@ -223,7 +223,7 @@ kubectl apply -f nodeport_sample.yml
 ---
 
 - volume
-  k8sノードのstrage相当。（抽象化されておらず、直接ノードのディレクトリを指定する）
+  k8sノードのstrage相当。  （抽象化されておらず、直接ノードのディレクトリを指定する）
     - EmptyDir
     - HostPath
     - nfs などのvolumeプラグインがある。
