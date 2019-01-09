@@ -3,7 +3,7 @@
 
 # Look-and-Feel
 # logo : assets/images/logo.png
-# theme : night
+theme : white
 # theme-override : assets/css/PITCHME.css
 # highlight : ir-black
 code-line-numbers : true
@@ -13,5 +13,11 @@ code-line-numbers : true
 # published : true
 
 # Plugins
-# charts : true
+charts : true
 # mathjax : TeX-AMS_HTML-full
+
+#フットノートの設定
+footnote : "github-ID: keita69"
+
+#スライドのページ数表示の設定
+slide-number: true
