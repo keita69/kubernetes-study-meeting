@@ -27,6 +27,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 +++
 
 ### 参考
+#### DockreFileの書き方を学ぶ
 - 改めてDockerfileのベストプラクティスを振り返ろう
   https://www.slideshare.net/ssuser1f3c12/introduce-that-best-practices-for-writing-dockerfiles
 
@@ -57,7 +58,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 
 ### アーキテクチャ
 
-![k8sアーキ](https://www.google.co.jp/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwih4NKei-DfAhVUdt4KHf6CAj4QjRx6BAgBEAU&url=https%3A%2F%2Fqiita.com%2Ftkusumi%2Fitems%2Fc2a92cd52bfdb9edd613&psig=AOvVaw3rNoGCCjKTWJYklaILWOm3&ust=1547102247066467)
+![k8sアーキ](https://camo.qiitausercontent.com/c2d6e9c630a7fcfcbb6638f104d1718e7e603276/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f3130303337372f38333032633861362d383361322d333633312d613662342d3762643535356433613138622e706e67)
 
 ---
 
