@@ -2,7 +2,7 @@
 # layout : center-right
 
 # Look-and-Feel
-# logo : assets/images/logo.png
+logo : https://connpass-tokyo.s3.amazonaws.com/thumbs/b4/5c/b45c88e043b55e0b8fe5af0bfb22aa4a.png
 theme : white
 # theme-override : assets/css/PITCHME.css
 # highlight : ir-black
