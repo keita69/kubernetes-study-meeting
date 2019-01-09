@@ -168,8 +168,8 @@ spec:
 # ClusterIP Serviceを作成
 $ kubectl apply -f clusterip_sample.yml
 ```
-@[2]()
-@[6]()
+@[2](kindはService)
+@[6](typeはclusterIP)
 
 ---
 
@@ -200,6 +200,8 @@ spec:
 # NodePort Serviceの作成
 kubectl apply -f nodeport_sample.yml
 ```
+@[2](kindはService)
+@[6](typeはNodePort)
 
 ---
 
@@ -249,6 +251,8 @@ spec:
 
 $ kubectl apply -f hostpath-sample.yml
 ```
+@[2](kindはPod)
+@[12-16](volumeの指定)
 
 ---
 
@@ -280,7 +284,7 @@ spec:
 
 $ kubectl create -f pv_sample.yml
 ```
-
+@[2](kindはPersistentVolume)
 
 ---
 
