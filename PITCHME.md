@@ -65,7 +65,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 
 ### kubernetes リソース
 - **Workloads**  
-  - リソースコンテナの実行に関するリソース 
+    - リソースコンテナの実行に関するリソース 
 - **Discovery ＆ LB**  
   - リソースコンテナを外部公開するようなエンドポイントを提供するリソース 
 - **Config ＆ Storage**  
