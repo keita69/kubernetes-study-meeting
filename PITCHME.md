@@ -253,6 +253,7 @@ $ kubectl apply -f hostpath-sample.yml
 ```
 @[2](kindはPod)
 @[12-16](volumeの指定)
+@[9-11](volumeMountsの指定)
 
 ---
 
