@@ -3,7 +3,18 @@
 
 ---
 
-### k8sで何ができるか？
+### kubernetes(k8s)とは？
+Kubernetes はコンテナ化されたアプリケーションのデプロイ、スケーリングなどの管理を自動化するためのプラットフォーム（コンテナオーケストレーションエンジン）です。
+
+### コンテナとは？
+OS上に「独立したサーバーと同様の振る舞いをする区画」のこと。  
+カーネルなどの機能を使って、OSのプロセスとして起動する。
+**※ LinuxOSのコンテナでWindowsのアプリは動かない！**
+
+Dockerコンテナ  
+http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
+
+## コンテナ　≒　仮想ホスト（VM）
 
 ---
 
@@ -27,15 +38,13 @@
 ### エコシステム  
 → k8sで使えるOSSはたくさんある！
 
-![alt](https://landscape.cncf.io/format=landscap)
+https://landscape.cncf.io/format=landscap
 
 ---
 
-### k8sで何ができるか？
+### アーキテクチャ
 
-+++
 
-# 4枚目
 
 ---
 
