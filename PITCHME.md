@@ -94,6 +94,8 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 - Pod  ---> StatefulSet
 - Pod  ---> Job         ---> CronJob
 
+@box[bg-orange text-white rounded demo-box-pad](Pod が１サーバのイメージで、コンテナはプロセスのイメージ。)
+
 ---
 
 ##### Pods-overview
@@ -112,21 +114,37 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 
 ### Discovery & LB リソース
 - Service
-  - ClusterIP
+  - ClusterIP ★
   - ExternalIP（ClusterIP の一種）
-  - NodePort
+  - NodePort ★
   - LoadBalancer
   - Headless（None）
   - ExternalName
   - None-Selector
-- Ingress
+- Ingress ★
+
+---
+
+#### Service の役割
+- L4 LoadBalancing
+- クラスタ内DNSによる名前解決
+- ラベルを利用したPodのサービスディスカバリ
+
+---
+
+#### Ingress の役割
+- L7 LoadBalancing
+- HTTPS終端
+- パスベースルーティング
 
 ---
 
 #### ClusterIP
 ![clusterip](https://thinkit.co.jp/sites/default/files/article_node/1373807.jpg)
 
-+++
+---
+
+### kind: Service の type: ClusterIP
 
 ```
 apiVersion: v1
@@ -140,7 +158,45 @@ spec:
       protocol: "TCP"
       port: 8080
       targetPort: 80
+  selector:
+    app: sample-app
+
+# ClusterIP Serviceを作成
+$ kubectl apply -f clusterip_sample.yml
 ```
+
+#### NodePort
+![nodeport](https://thinkit.co.jp/sites/default/files/article_node/1373809.jpg)
+
+---
+
+### kind: Service の type: NodePort
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-nodeport
+spec:
+  type: NodePort
+  ports:
+    - name: "http-port"
+      protocol: "TCP"
+      port: 8080
+      targetPort: 80
+      nodePort: 30080
+  selector:
+    app: sample-app
+
+# NodePort Serviceの作成
+kubectl apply -f nodeport_sample.yml
+```
+
+
+#### Ingress
+![ingress](https://thinkit.co.jp/sites/default/files/article_node/1373904.jpg)
+LBは一旦Nginx Podまで転送し、NginxがL7相当の処理を行い対象のPodへ転送します。このとき、Nginx Podから対象のPodまではNodePortは通らず、直接PodのIP宛に送られます。
+
 
 ---
 
