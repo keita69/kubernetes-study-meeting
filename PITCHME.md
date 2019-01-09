@@ -16,13 +16,12 @@
 
 --- 
 
-- Dockerコンテナ  
-
 ![Dockerコンテナ](http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png)
 http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 
+---
 
-@box[bg-orange text-white rounded demo-box-pad]( コンテナ ≒ 仮想ホスト（VM）) 
+@box( コンテナ ≒ 仮想ホスト（VM）) 
 
 ---
 
