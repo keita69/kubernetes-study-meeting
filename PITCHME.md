@@ -19,8 +19,7 @@
 - Dockerコンテナ  
   http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 
-:warning:
-## コンテナ ≒ 仮想ホスト（VM）
+@box[bg-orange text-white rounded demo-box-pad](コンテナ ≒ 仮想ホスト（VM）) 
 
 ---
 
