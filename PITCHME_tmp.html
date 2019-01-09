@@ -436,26 +436,24 @@ https://www.slideshare.net/ssuser1f3c12/introduce-that-best-practices-for-writin
 <h3 id="%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3">アーキテクチャ</h3>
 <p><img src="https://camo.qiitausercontent.com/c2d6e9c630a7fcfcbb6638f104d1718e7e603276/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f3130303337372f38333032633861362d383361322d333633312d613662342d3762643535356433613138622e706e67" alt="k8sアーキ"></p>
 <hr>
-<h3 id="kubernetes">kubernetes</h3>
+<h3 id="kubernetes-%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9">kubernetes リソース</h3>
 <ul>
-<li>Workloads
+<li><strong>Workloads</strong>
 リソースコンテナの実行に関するリソース</li>
-<li>Discovery ＆ LB
+<li><strong>Discovery ＆ LB</strong>
 リソースコンテナを外部公開するようなエンドポイントを提供するリソース</li>
-<li>Config ＆ Storage
+<li><strong>Config ＆ Storage</strong>
 リソース設定／機密情報／永続化ボリュームなどに関するリソース</li>
-<li>Cluster
+<li><strong>Cluster</strong>
 リソースセキュリティやクォータなどに関するリソース</li>
-<li>Metadata
+<li><strong>Metadata</strong>
 リソースクラスタ内の他のリソースを操作するためのリソース</li>
 </ul>
 <hr>
-<h3 id="kubernetes-%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9">kubernetes リソース</h3>
-<ul>
-<li>Workloads
+<h3 id="workloads-%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9">Workloads リソース</h3>
 <ul>
 <li>Pod</li>
-<li><s>ReplicationController</s></li>
+<li><s>ReplicationController</s> (廃止）</li>
 <li>ReplicaSet</li>
 <li>Deployment</li>
 <li>DaemonSet</li>
@@ -463,10 +461,8 @@ https://www.slideshare.net/ssuser1f3c12/introduce-that-best-practices-for-writin
 <li>Job</li>
 <li>CronJob</li>
 </ul>
-</li>
-</ul>
 <hr>
-<h3 id="workloads%E3%81%AE%E9%9A%8E%E5%B1%A4%E6%A7%8B%E9%80%A0">Workloadsの階層構造</h3>
+<h4 id="workloads%E3%81%AE%E9%9A%8E%E5%B1%A4%E6%A7%8B%E9%80%A0">Workloadsの階層構造</h4>
 <ul>
 <li>Pod  ---&gt; ReplicaSet  ---&gt; Deployment</li>
 <li>Pod  ---&gt; DemonSet</li>
@@ -474,17 +470,55 @@ https://www.slideshare.net/ssuser1f3c12/introduce-that-best-practices-for-writin
 <li>Pod  ---&gt; Job         ---&gt; CronJob</li>
 </ul>
 <hr>
-<h3 id="pods-overview">Pods-overview</h3>
+<h5 id="pods-overview">Pods-overview</h5>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/fe03f68d8ede9815184852ca2a4fd30325e5d15a/98064/docs/tutorials/kubernetes-basics/public/images/module_03_pods.svg" alt="pods-overview"></p>
 <ul>
 <li>https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/#pods-overview</li>
 </ul>
-<p><img src="https://d33wubrfki0l68.cloudfront.net/fe03f68d8ede9815184852ca2a4fd30325e5d15a/98064/docs/tutorials/kubernetes-basics/public/images/module_03_pods.svg" alt="pods-overview"></p>
 <hr>
-<h3 id="node-overview">Node-overview</h3>
+<h5 id="node-overview">Node-overview</h5>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/5cb72d407cbe2755e581b6de757e0d81760d5b86/a9df9/docs/tutorials/kubernetes-basics/public/images/module_03_nodes.svg" alt="node-overview"></p>
 <ul>
 <li>https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/#node-overview</li>
 </ul>
-<p><img src="https://d33wubrfki0l68.cloudfront.net/5cb72d407cbe2755e581b6de757e0d81760d5b86/a9df9/docs/tutorials/kubernetes-basics/public/images/module_03_nodes.svg" alt="node-overview"></p>
+<hr>
+<h3 id="discovery-lb-%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9">Discovery &amp; LB リソース</h3>
+<ul>
+<li>Service
+<ul>
+<li>ClusterIP</li>
+<li>ExternalIP（ClusterIP の一種）</li>
+<li>NodePort</li>
+<li>LoadBalancer</li>
+<li>Headless（None）</li>
+<li>ExternalName</li>
+<li>None-Selector</li>
+</ul>
+</li>
+<li>Ingress</li>
+</ul>
+<hr>
+<h4 id="clusterip">ClusterIP</h4>
+<p><img src="https://thinkit.co.jp/sites/default/files/article_node/1373807.jpg" alt="clusterip"></p>
+<p>+++</p>
+<pre class="hljs"><code><div>apiVersion: v1
+kind: Service
+metadata:
+  name: sample-clusterip
+spec:
+  type: ClusterIP
+  ports:
+    - name: &quot;http-port&quot;
+      protocol: &quot;TCP&quot;
+      port: 8080
+      targetPort: 80
+</div></code></pre>
+<hr>
+<h3 id="%E5%B0%8F%E3%83%8D%E3%82%BF">小ネタ</h3>
+<ul>
+<li>kubectlコマンドのパラメタ補完（必須！）
+https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion</li>
+</ul>
 <hr>
 <p>終わり</p>
 

@@ -62,34 +62,33 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 
 ---
 
-### kubernetes 
-- Workloads
+### kubernetes リソース
+- **Workloads**
   リソースコンテナの実行に関するリソース
-- Discovery ＆ LB
+- **Discovery ＆ LB**
   リソースコンテナを外部公開するようなエンドポイントを提供するリソース
-- Config ＆ Storage
+- **Config ＆ Storage**
   リソース設定／機密情報／永続化ボリュームなどに関するリソース
-- Cluster
+- **Cluster**
   リソースセキュリティやクォータなどに関するリソース
-- Metadata
+- **Metadata**
   リソースクラスタ内の他のリソースを操作するためのリソース
 
 ---
 
-### kubernetes リソース
-- Workloads
-  - Pod
-  - ~~ReplicationController~~
-  - ReplicaSet
-  - Deployment
-  - DaemonSet
-  - StatefulSet
-  - Job
-  - CronJob
+### Workloads リソース
+- Pod
+- ~~ReplicationController~~ (廃止）
+- ReplicaSet
+- Deployment
+- DaemonSet
+- StatefulSet
+- Job
+- CronJob
 
 ---
 
-### Workloadsの階層構造
+#### Workloadsの階層構造
 - Pod  ---> ReplicaSet  ---> Deployment 
 - Pod  ---> DemonSet
 - Pod  ---> StatefulSet
@@ -97,17 +96,58 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 
 ---
 
-### Pods-overview
-- https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/#pods-overview
-
+##### Pods-overview
 ![pods-overview](https://d33wubrfki0l68.cloudfront.net/fe03f68d8ede9815184852ca2a4fd30325e5d15a/98064/docs/tutorials/kubernetes-basics/public/images/module_03_pods.svg)
+
+- https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/#pods-overview
 
 ---
 
-### Node-overview
+##### Node-overview
+![node-overview](https://d33wubrfki0l68.cloudfront.net/5cb72d407cbe2755e581b6de757e0d81760d5b86/a9df9/docs/tutorials/kubernetes-basics/public/images/module_03_nodes.svg)
+
 - https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/#node-overview
 
-![node-overview](https://d33wubrfki0l68.cloudfront.net/5cb72d407cbe2755e581b6de757e0d81760d5b86/a9df9/docs/tutorials/kubernetes-basics/public/images/module_03_nodes.svg)
+---
+
+### Discovery & LB リソース
+- Service
+  - ClusterIP
+  - ExternalIP（ClusterIP の一種）
+  - NodePort
+  - LoadBalancer
+  - Headless（None）
+  - ExternalName
+  - None-Selector
+- Ingress
+
+---
+
+#### ClusterIP
+![clusterip](https://thinkit.co.jp/sites/default/files/article_node/1373807.jpg)
+
++++
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-clusterip
+spec:
+  type: ClusterIP
+  ports:
+    - name: "http-port"
+      protocol: "TCP"
+      port: 8080
+      targetPort: 80
+```
+
+---
+
+### 小ネタ
+- kubectlコマンドのパラメタ補完（必須！）
+  https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion
+
 
 ---
 
