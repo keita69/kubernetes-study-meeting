@@ -64,15 +64,15 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 ---
 
 ### kubernetes リソース
-- **Workloads**
+- **Workloads**  
   リソースコンテナの実行に関するリソース 
-- **Discovery ＆ LB**
+- **Discovery ＆ LB**  
   リソースコンテナを外部公開するようなエンドポイントを提供するリソース 
-- **Config ＆ Storage**
+- **Config ＆ Storage**  
   リソース設定／機密情報／永続化ボリュームなどに関するリソース 
-- **Cluster**
+- **Cluster**  
   リソースセキュリティやクォータなどに関するリソース 
-- **Metadata**
+- **Metadata**  
   リソースクラスタ内の他のリソースを操作するためのリソース 
 
 ---
