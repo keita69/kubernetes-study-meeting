@@ -64,15 +64,15 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 
 ### kubernetes リソース
 - **Workloads**
-  リソースコンテナの実行に関するリソース
+  リソースコンテナの実行に関するリソース |
 - **Discovery ＆ LB**
-  リソースコンテナを外部公開するようなエンドポイントを提供するリソース
+  リソースコンテナを外部公開するようなエンドポイントを提供するリソース |
 - **Config ＆ Storage**
-  リソース設定／機密情報／永続化ボリュームなどに関するリソース
+  リソース設定／機密情報／永続化ボリュームなどに関するリソース |
 - **Cluster**
-  リソースセキュリティやクォータなどに関するリソース
+  リソースセキュリティやクォータなどに関するリソース |
 - **Metadata**
-  リソースクラスタ内の他のリソースを操作するためのリソース
+  リソースクラスタ内の他のリソースを操作するためのリソース |
 
 ---
 
@@ -88,7 +88,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 
 ---
 
-#### Workloadsの階層構造
+### Workloadsの階層構造
 - Pod  ---> ReplicaSet  ---> Deployment 
 - Pod  ---> DemonSet
 - Pod  ---> StatefulSet
@@ -125,14 +125,14 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 
 ---
 
-#### Service の役割
+### Service の役割
 - L4 LoadBalancing
 - クラスタ内DNSによる名前解決
 - ラベルを利用したPodのサービスディスカバリ
 
 ---
 
-#### Ingress の役割
+### Ingress の役割
 - L7 LoadBalancing
 - HTTPS終端
 - パスベースルーティング
@@ -193,7 +193,7 @@ kubectl apply -f nodeport_sample.yml
 ```
 
 
-#### Ingress
+### Ingress
 ![ingress](https://thinkit.co.jp/sites/default/files/article_node/1373904.jpg)
 LBは一旦Nginx Podまで転送し、NginxがL7相当の処理を行い対象のPodへ転送します。このとき、Nginx Podから対象のPodまではNodePortは通らず、直接PodのIP宛に送られます。
 
