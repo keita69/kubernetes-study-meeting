@@ -62,7 +62,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 ![k8sアーキ](https://camo.qiitausercontent.com/c2d6e9c630a7fcfcbb6638f104d1718e7e603276/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f3130303337372f38333032633861362d383361322d333633312d613662342d3762643535356433613138622e706e67)
 
 ---
-
+@size[12px](
 - kubernetesリソース
   - **Workloads**  
     - リソースコンテナの実行に関するリソース 
@@ -74,7 +74,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
     - リソースセキュリティやクォータなどに関するリソース 
   - **Metadata**
     - リソースクラスタ内の他のリソースを操作するためのリソース 
-
+)
 ---
 
 ### Workloads リソース
