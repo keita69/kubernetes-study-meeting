@@ -168,6 +168,8 @@ spec:
 # ClusterIP Serviceを作成
 $ kubectl apply -f clusterip_sample.yml
 ```
+@[2]()
+@[6]()
 
 ---
 
