@@ -87,15 +87,28 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
   - Job
   - CronJob
 
-+++
+---
+
+### Workloadsの階層構造
+- Pod  ---> ReplicaSet  ---> Deployment 
+- Pod  ---> DemonSet
+- Pod  ---> StatefulSet
+- Pod  ---> Job         ---> CronJob
+
+---
 
 ### Pods-overview
 - https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/#pods-overview
 
 ![pods-overview](https://d33wubrfki0l68.cloudfront.net/fe03f68d8ede9815184852ca2a4fd30325e5d15a/98064/docs/tutorials/kubernetes-basics/public/images/module_03_pods.svg)
 
+---
 
 ### Node-overview
 - https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/#node-overview
 
 ![node-overview](https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/#node-overview)
+
+---
+
+終わり
