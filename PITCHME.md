@@ -199,8 +199,102 @@ kubectl apply -f nodeport_sample.yml
 ```
 
 ---
-#### Ingress @size[10px](LBは一旦Nginx Podまで転送し、NginxがL7相当の処理を行い対象のPodへ転送します。このとき、Nginx Podから対象のPodまではNodePortは通らず、直接PodのIP宛に送られます。)
+
+#### Ingress
 ![ingress](https://thinkit.co.jp/sites/default/files/article_node/1373904.jpg)
+
+---
+
+#### Config ＆ Storage リソース
+- Config
+  - Secret
+    機密情報などを管理する
+  - ConfigMap
+    単純なKey-Value値や設定ファイルなどは、ConfigMapで管理する
+- Storage
+  - PersistentVolumeClaim
+    PersistentVolumeリソースの中から「xxxGBの領域ちょうだい！」と要求するためのリソース。
+
+---
+
+- volume
+  k8sノードのstrage相当。（抽象化されておらず、直接ノードのディレクトリを指定する）
+    - EmptyDir
+    - HostPath
+    - nfs などのvolumeプラグインがある。
+
++++
+
+volume は POD定義で直接指定する。
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-hostpath
+spec:
+  containers:
+  - image: nginx:1.12
+    name: nginx-container
+    volumeMounts:
+    - mountPath: /srv
+      name: hostpath-sample
+  volumes:
+  - name: hostpath-sample
+    hostPath:
+      path: /data
+      type: DirectoryOrCreate
+
+$ kubectl apply -f hostpath-sample.yml
+```
+
+---
+
+- persistentVolume
+  k8sで抽象化された永続化Volumeです。 
+
++++
+
+```
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sample-pv
+  labels:
+    type: nfs
+    environment: stg
+spec:
+  capacity:
+    storage: 10G
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: slow
+  mountOptions:
+    - hard
+  nfs:
+    server: xxx.xxx.xxx.xxx
+    path: /nfs/sample
+
+$ kubectl create -f pv_sample.yml
+```
+
+
+---
+
+- persistentVolumeClaim
+  PersistentVolumeリソースの中から「xxxGBの領域ちょうだい！」と要求するためのリソース。
+  ![pvc](https://thinkit.co.jp/sites/default/files/article_node/1419505.jpg)
+
+---
+
+### Cluster リソース
+未稿
+
+---
+
+### Metadata リソース |
+未稿
+
 ---
 
 ### 小ネタ
