@@ -433,9 +433,29 @@ namespace: default
 - CustomResourceDefinition
 
 ---
+### LimitRange
+- Pod などに対してCPU やメモリのリソースの最小値や最大値、デフォルト値などを設定することが可能。
+  (Namespace に対して制限をかける)
+
+---
+### HorizontalPodAutoscaler
+- HorizontalPodAutoscaler(HPA) は、Deployment ／ ReplicaSet ／ ReplicationController のレプリカ数をCPU 負荷などに応じて自動的にスケールさせるリソース。
+
+### VerticalPodAutoscaler
+- VerticalPodAutoscaler はPod のスケールアップ
+
+---
+### PodDisruptionBudget
+- PodDisruptionBudget はノードが排出処理を行う際に、Pod を停止することのできる最大数を設定するリソースです。
+
+---
+### CustomResourceDefinition（CRD）
+-  独自のリソース（k8sの拡張）を作成するリソースです。
+
+---
 
 ### 小ネタ
-- kubectlコマンドのパラメタ補完（必須！）
+- kubectlコマンドのパラメタ補完
   https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion
 
 ---
