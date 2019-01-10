@@ -51,6 +51,7 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 
 +++
 
+###### エコシステム
 ![エコシステム](https://landscape.cncf.io/images/landscape.png)
 
 ---
@@ -215,7 +216,7 @@ kubectl apply -f nodeport_sample.yml
 
 ---
 
-- volume
+###### volume
   k8sノードのstrage相当。  （抽象化されておらず、直接ノードのディレクトリを指定する）
     - EmptyDir
     - HostPath
@@ -223,7 +224,7 @@ kubectl apply -f nodeport_sample.yml
 
 +++
 
-volume は POD定義で直接指定する。
+###### volume は POD定義で直接指定する。
 ```
 apiVersion: v1
 kind: Pod
@@ -250,12 +251,13 @@ $ kubectl apply -f hostpath-sample.yml
 
 ---
 
-- persistentVolume  
+###### persistentVolume  
   k8sで抽象化された永続化Volumeです。 
   ![pvc](https://thinkit.co.jp/sites/default/files/article_node/1419505.jpg)
 
 +++
 
+###### persistentVolume の定義
 ```
 apiVersion: v1
 kind: PersistentVolume
@@ -283,7 +285,7 @@ $ kubectl create -f pv_sample.yml
 
 ---
 
-- persistentVolumeClaim  
+###### persistentVolumeClaim  
   PersistentVolumeリソースの中から「xxxGBの領域ちょうだい！」と要求するためのリソース。
   ![pvc](https://thinkit.co.jp/sites/default/files/article_node/1419505.jpg)
 
@@ -330,7 +332,7 @@ kubectl get node
 
 ---
 
-「作成可能なリソース数の制限」
+######「作成可能なリソース数の制限」
 ```
 apiVersion: v1
 kind: ResourceQuota
@@ -345,7 +347,7 @@ count/configmaps: 10
 @[8-9]
 
 ---
-「リソース使用量の制限」
+######「リソース使用量の制限」
 
 ```
 apiVersion: v1
@@ -389,7 +391,7 @@ count/deployments.extensions: 10
 
 ---
 
-RoleBindingの定義
+###### RoleBindingの定義
 ```
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -438,4 +440,4 @@ namespace: default
 
 ---
 
-終わり
+# 終わり
