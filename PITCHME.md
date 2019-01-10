@@ -294,16 +294,135 @@ $ kubectl create -f pv_sample.yml
 - Namespace
 - PersistentVolume
 - ResourceQuota
+アクセス制御
 - ServiceAccount
 - Role
 - ClusterRole
 - RoleBinding
 - ClusterRoleBinding
 - NetworkPolicy
-@[2]
+
+---
+### Node
+yamlは作らないけど、表示は頻繁に行うリソース。
+
+```
+kubectl get node
+```
+---
+### Namespace
+仮想的な Kubernetes クラスタの分離機能。  
+初期状態で
+- default
+- kube-system
+- kube-public
+の 3 種類のNamespace がある。
+---
+
+---
+### PersistentVolume
+前の方でやった。
 
 ---
 
+---
+### ResourceQuota
+各Namespace ごとに、すなわち仮想Kubernetes クラスタごと
+に利用可能なリソースを制限することが可能。
+
+- 「作成可能なリソース数の制限」
+- 「リソース使用量の制限」
+
+---
+
+- 「作成可能なリソース数の制限」
+```
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+name: sample-resourcequota
+namespace: default
+spec:
+hard:
+# 作成可能なリソースの数
+count/configmaps: 10
+```
+@[8-9]
+
+---
+- 「リソース使用量の制限」
+
+```
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+name: sample-resourcequota-count-new
+namespace: default
+spec:
+hard:
+# 作成可能なリソースの数
+count/deployments.apps: 10
+count/replicasets.apps: 10
+count/deployments.extensions: 10
+```
+@[8-10]
+
+---
+### ServiceAccount
+Pod で実行されるプロセスのために割り当てるアカウント。  
+ServiceAccount は**Namespace に紐づく**リソースです。  
+※ 指定しない場合はdefault ServiceAccount
+
+---
+
+### Role
+どういった操作を許可するか、**Namespace単位**で定める。
+※ RBAC（Role Based Access Control）で権限管理する。（後述）
+
+---
+
+---
+
+### ClusterRole
+どういった操作を許可するか、**Cluster 単位**で定める。
+※ RBAC（Role Based Access Control）で権限管理する。（後述）
+
+---
+
+---
+### RoleBinding
+roleRef で紐づけるRole を、subjects に紐づけるServiceAccount を指定。
+
+---
+
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+name: sample-rolebinding
+namespace: default
+roleRef:
+apiGroup: rbac.authorization.k8s.io
+kind: Role
+name: sample-role
+subjects:
+- kind: ServiceAccount
+name: sample-serviceaccount
+namespace: default
+```
+
+---
+### ClusterRoleBinding
+roleRef で紐づけるClusterRole を、subjects に紐づけるServiceAccount を指定。
+
+---
+### NetworkPolicy
+NetworkPolicy は、Kubernetes クラスタ内でPod 同士が通信する際のトラフィックルールを規定
+するもの。（flanelでは使えない）
+※ NetworkPolicy を利用しない場合、クラスタ内の全てのPod 同士で通信を行うことが可能
+
+
+---
 ### Metadata リソース 
 - LimitRange
 - HorizontalPodAutoscaler
