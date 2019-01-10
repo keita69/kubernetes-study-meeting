@@ -318,13 +318,11 @@ kubectl get node
   - kube-public の 3 種類のNamespace がある。
 ---
 
----
 ### PersistentVolume
 - 前の方でやった。
 
 ---
 
----
 ### ResourceQuota
 - 各Namespace ごとに、すなわち仮想Kubernetes クラスタごとに利用可能なリソースを制限することが可能。
   - 「作成可能なリソース数の制限」
@@ -332,7 +330,7 @@ kubectl get node
 
 ---
 
-- 「作成可能なリソース数の制限」
+「作成可能なリソース数の制限」
 ```
 apiVersion: v1
 kind: ResourceQuota
@@ -347,7 +345,7 @@ count/configmaps: 10
 @[8-9]
 
 ---
-- 「リソース使用量の制限」
+「リソース使用量の制限」
 
 ```
 apiVersion: v1
@@ -389,6 +387,7 @@ count/deployments.extensions: 10
 
 ---
 
+RoleBindingの定義
 ```
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
