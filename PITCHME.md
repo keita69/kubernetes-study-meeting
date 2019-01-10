@@ -374,8 +374,7 @@ count/deployments.extensions: 10
 - どういった操作を許可するか、**Namespace単位**で定める。
   ※ RBAC（Role Based Access Control）で権限管理する。
 
-@box[bg-orange text-white rounded demo-box-pad]( RBACは、どういった操作を許可するのかを定めたRole を作成し、
-ServiceAccount などのUser に対してRole を紐づける（RoleBinding）ことで権限を管理します )
+@box[bg-orange text-white rounded demo-box-pad]( RBACは、どういった操作を許可するのかを定めたRole を作成し、ServiceAccount などのUser に対してRole を紐づける（RoleBinding）ことで権限を管理します )
 
 ---
 
