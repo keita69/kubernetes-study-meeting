@@ -333,6 +333,7 @@ kubectl get node
 ---
 
 ######「作成可能なリソース数の制限」
+
 ```
 apiVersion: v1
 kind: ResourceQuota
@@ -347,6 +348,7 @@ count/configmaps: 10
 @[8-9]
 
 ---
+
 ######「リソース使用量の制限」
 
 ```
@@ -392,6 +394,7 @@ count/deployments.extensions: 10
 ---
 
 ###### RoleBindingの定義
+
 ```
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
