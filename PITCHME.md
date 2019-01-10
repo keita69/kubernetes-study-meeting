@@ -360,7 +360,7 @@ count/deployments.apps: 10
 count/replicasets.apps: 10
 count/deployments.extensions: 10
 ```
-@[8-10]
+@[8-11]
 
 ---
 ### ServiceAccount
