@@ -51,8 +51,6 @@ http://image.itmedia.co.jp/ait/articles/1701/30/wi-docker01002.png
 
 +++
 
-### エコシステム  
-
 ![エコシステム](https://landscape.cncf.io/images/landscape.png)
 
 ---
@@ -292,12 +290,25 @@ $ kubectl create -f pv_sample.yml
 ---
 
 ### Cluster リソース
-未稿
+- Node
+- Namespace
+- PersistentVolume
+- ResourceQuota
+- ServiceAccount
+- Role
+- ClusterRole
+- RoleBinding
+- ClusterRoleBinding
+- NetworkPolicy
+@[2]
 
 ---
 
 ### Metadata リソース 
-未稿
+- LimitRange
+- HorizontalPodAutoscaler
+- PodDisruptionBudget
+- CustomResourceDefinition
 
 ---
 
