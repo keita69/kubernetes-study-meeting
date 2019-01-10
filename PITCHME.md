@@ -364,7 +364,7 @@ count/deployments.extensions: 10
 
 ---
 ### ServiceAccount
-- Pod で実行されるプロセスのために割り当てるアカウント。  
+- Pod 実行のために割り当てるアカウント。  
 - ServiceAccount は**Namespace に紐づく**リソースです。  
   ※ 指定しない場合はdefault ServiceAccount
 
@@ -372,13 +372,15 @@ count/deployments.extensions: 10
 
 ### Role
 - どういった操作を許可するか、**Namespace単位**で定める。
-  ※ RBAC（Role Based Access Control）で権限管理する。（後述）
+  ※ RBAC（Role Based Access Control）で権限管理する。
 
+@box[bg-orange text-white rounded demo-box-pad]( RBAC（Role Based Access Control）は、どういった操作を許可するのかを定めたRole を作成し、
+ServiceAccount などのUser に対してRole を紐づける（RoleBinding）ことで権限を管理します )
 ---
 
 ### ClusterRole
 - どういった操作を許可するか、**Cluster 単位**で定める。
-  ※ RBAC（Role Based Access Control）で権限管理する。（後述）
+  ※ RBAC（Role Based Access Control）で権限管理する。
 
 ---
 
